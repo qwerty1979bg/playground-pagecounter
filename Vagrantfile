@@ -13,6 +13,9 @@ Vagrant.configure("2") do |config|
     node.vm.box = "ubuntu/xenial64"
     node.vm.hostname = name
     node.vm.post_up_message = "db01 -> Started!'"
+
+    #install "redis-server"
+    node.vm.provision "shell", path: "scripts/provision_db01.sh"
   end
 
 end
